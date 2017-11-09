@@ -1,5 +1,5 @@
 <?php
-namespace Helpers\Log\Tracer;
+namespace Helpers\Tracer;
 
 use Helpers\Statsd\StatsdService;
 
@@ -216,10 +216,10 @@ class Tracer
 		if (!empty(self::$host)) {
 			$reportKeys[] = 'by_hosts.' . self::$host;
 		}
-//
-//		if (!empty(self::$endpoint)) {
-//			$reportKeys[] = 'by_endpoints.' . self::$endpoint;
-//		}
+
+		if (!empty(self::$endpoint)) {
+			$reportKeys[] = 'by_endpoints.' . self::$endpoint;
+		}
 
 		foreach ($traces as $metricName => $stats) {
 			$metricName = strtolower(preg_replace('/[^\w\-\d]+/', '-', trim($metricName)));

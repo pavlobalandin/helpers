@@ -1,5 +1,7 @@
 <?php
-namespace Helpers\Log\Statsd;
+namespace Helpers\Statsd\Tests;
+
+use Helpers\Statsd\Statsd;
 use \PHPUnit_Framework_MockObject_MockObject as MockObject;
 
 /**
@@ -8,6 +10,8 @@ use \PHPUnit_Framework_MockObject_MockObject as MockObject;
  */
 class StatsdTest extends \PHPUnit_Framework_TestCase
 {
+	const STATSD_INSTANCE_CLASS_NAME = '\Helpers\Statsd\StatsdClient';
+
 	public function testIncrement()
 	{
 		$key = 'some';
@@ -80,11 +84,11 @@ class StatsdTest extends \PHPUnit_Framework_TestCase
 	}
 
 	/**
-	 * @return \Helpers\Log\Statsd\StatsdClient
+	 * @return \Helpers\Statsd\StatsdClient
 	 */
 	private function getStatsdClient()
 	{
-		return $this->getMockBuilder('\Helpers\Log\Statsd\StatsdClient')
+		return $this->getMockBuilder(self::STATSD_INSTANCE_CLASS_NAME)
 			->disableOriginalConstructor()
 			->setMethods(array('increment', 'decrement', 'count'))
 			->getMock();

@@ -1,6 +1,6 @@
 <?php
 
-namespace Helpers\Log\Logstash;
+namespace Helpers\Logstash;
 
 use Psr\Log\AbstractLogger;
 use Psr\Log\LoggerInterface;

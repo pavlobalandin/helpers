@@ -1,7 +1,7 @@
 <?php
-namespace Helpers\Log\Statsd;
+namespace Helpers\Statsd;
 
-use Helpers\Log\Tracer\Tracer;
+use Helpers\Tracer\Tracer;
 
 class StatsdService
 {
@@ -84,7 +84,7 @@ class StatsdService
 			$statsdService->setConnection($endpoint);
 			Tracer::setStatsdService($statsdService);
 			register_shutdown_function(
-				['\Helpers\Log\Tracer\Tracer', 'handleShutdown'],
+				['\Helpers\Tracer\Tracer', 'handleShutdown'],
 				function () {
 					return preg_replace('/[^a-z]/', '_', strtolower(gethostname()));
 				},

@@ -1,5 +1,5 @@
 <?php
-namespace Helpers\Log\Logstash;
+namespace Helpers\Logstash;
 
 class LogstashConfig
 {

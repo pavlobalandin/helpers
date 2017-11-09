@@ -1,5 +1,7 @@
 <?php
-namespace Helpers\Log\Tracer;
+namespace Helpers\Tracer\Tests;
+
+use Helpers\Tracer\Tracer;
 
 class TracerTest extends \PHPUnit_Framework_TestCase
 {
@@ -225,7 +227,7 @@ class TracerTest extends \PHPUnit_Framework_TestCase
 
 	private function getStatsdService()
 	{
-		$mock = $this->getMockBuilder('\Helpers\Log\Statsd\StatsdService')
+		$mock = $this->getMockBuilder('\Helpers\Statsd\StatsdService')
 			->disableOriginalConstructor()
 			->setMethods(['count', 'increment', 'gauge', 'timing'])
 			->getMock();

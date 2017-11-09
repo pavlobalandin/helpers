@@ -14,7 +14,8 @@
 
 	<testsuites>
 		<testsuite name="General tests">
-			<directory>Log</directory>
+			<directory>Statsd</directory>
+			<directory>Tracer</directory>
 		</testsuite>
 	</testsuites>
 </phpunit>

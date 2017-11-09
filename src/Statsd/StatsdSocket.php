@@ -1,5 +1,5 @@
 <?php
-namespace Helpers\Log\Statsd;
+namespace Helpers\Statsd;
 
 class StatsdSocket
 	implements Connection
